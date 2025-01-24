@@ -1,0 +1,7 @@
+.active > a{
+    color: white;
+}
+
+main{
+    min-height: 80vh;
+}

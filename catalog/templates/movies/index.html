@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %} Movies {% endblock %}
+
+
+{% block content %}
+
+<div class="jumbotron jumbotron-fluid p-4 bg-light mb-4">
+    <div class="container">
+      <h1 class="display-4">Movies</h1>
+      <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+    </div>
+  </div>
+
+
+  {% if movies %}
+    {% for movie in movies %}
+        {% if movie.isPublished %}
+            {% include 'partials/movie.html' with movie=movie %}
+        {% endif %}
+    {% endfor %}
+  {% else %}
+    <div class="alert alert-warning">
+        <p>
+            No Movies
+        </p>
+    </div>
+  {% endif %}
+
+
+
+{% endblock %}

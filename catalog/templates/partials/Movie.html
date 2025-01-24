@@ -1,0 +1,29 @@
+{% load static %}
+{% load humanize %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card mb-3">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="{% static movie.get_movie_image_path %}" alt="godfather" class="card-img">
+                </div>
+                <div class="col-md-9">
+                    <div class="card-body d-flex flex-column h-100">
+                        <div class="card-title">
+                            <h3><a href="{% url 'details' movie.id %}" class="text-decoration-none">{{movie.name}}</a></h3>
+                        </div>
+                        <p class="card-text">
+                            {{movie.description}}
+                        </p>
+                        <div class="card-footer mt-auto">
+                            <p class="card-text">
+                                <small class="text-muted">{{movie.created_date | timesince}}</small>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
